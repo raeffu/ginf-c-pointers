@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <malloc.h>
 
 struct NODE {
   int a ;
@@ -28,10 +27,10 @@ int main(){
   printf("sizeof(nodes[0].c) \t%zu\n", sizeof(nodes[0].c));
     printf("sizeof(nodes[0]) \t%zu\n", sizeof(nodes[0]));
   printf("sizeof(nodes) \t\t%zu\n", sizeof(nodes));
-  
+
   printf("nodes[3].a\t\t%i\n", nodes[3].a);
   printf("nodes[3].a\t\t%i\n", nodes[3].a);
-  
+
   printf("nodes\t\t\t%p\n", nodes);
   //  printf("%i\n", nodes.a);
   printf("nodes[3].a\t\t%i\n", nodes[3].a);
@@ -66,10 +65,10 @@ int main(){
   printf("**npp\t\t\t{ %i, %p, %p }\n", (**npp).a, (**npp).b, (**npp).c );
   printf("*npp->a\t\t\tillegal\n" );
   printf("(*npp)->a\t\t%i\n",(*npp)->a );
-  
+
   printf("&np\t\t\tunknown: %p\n",&np);
   printf("&np->a\t\t\t%p\n",&np->a);
   printf("&np->c->c->a\t\t%p\n",&np->c->c->a);
-  
+
   return 1;
 }
