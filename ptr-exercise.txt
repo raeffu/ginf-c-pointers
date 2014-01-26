@@ -1,0 +1,42 @@
+struct NODE nodes[5] = {
+ { 5, nodes + 3, NULL },
+ { 15, nodes + 4, nodes + 3 },
+ { 22, NULL, nodes + 4 },
+ { 12, nodes + 1, nodes },
+ { 18, nodes + 2, nodes + 1 }
+};
+sizeof(int)                     4
+sizeof(struct NODE *)           4
+sizeof(nodes[0].a)              4
+sizeof(nodes[0].b)              4
+sizeof(nodes[0].c) 	            4
+sizeof(nodes[0]) 	              12
+sizeof(nodes) 		              60
+nodes[3].a		                  12
+nodes[3].a		                  12
+nodes			                      0x804a040
+nodes[3].a		                  12
+nodes[3].c		                  0x804a040
+nodes[3].c->a		                5
+*nodes			                    { 5, 0x804a064, (nil) }
+*nodes.a		                    illegal
+(*nodes).a		                  5
+nodes->a		                    5
+nodes[3].b->b		                0x804a070
+*nodes[3].b->b		              { 18, 0x804a058, 0x804a04c }
+&nodes			                    0x804a040
+&nodes[3].a		                  0x804a064
+&nodes[3].b		                  0x804a068
+&nodes[3].c		                  0x804a06c
+&nodes[3].c->a		              0x804a040
+np			                        0x804a058
+np->a			                      22
+np->c->c->a		                  15
+*npp			                      0x804a070
+**npp			                      { 18, 0x804a058, 0x804a04c }
+**npp			                      { 18, 0x804a058, 0x804a04c }
+*npp->a			                    illegal
+(*npp)->a		                    18
+&np			                        unknown: 0x804a07c
+&np->a			                    0x804a058
+&np->c->c->a		                0x804a04c
