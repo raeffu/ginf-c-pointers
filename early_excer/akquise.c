@@ -96,10 +96,10 @@ int main(){
   int agebuffer;
 
   for(i=0 ; i<MAX_PERSON; i++){
-	printf("Enter Name(3): ");
+    printf("Enter Name(Hotel %d): ", i);
 	scanf("%s", namebuffer);
 
-	printf("Enter age(3): ");
+	printf("Enter age(Hotel %d): ", i);
 	scanf("%i", &agebuffer);
 
 	hotel[i] = malloc(sizeof(struct person2));
@@ -107,11 +107,11 @@ int main(){
 	len=0;
 	while(namebuffer[len++]);
 
-	(*hotel[i]).name = (char *) malloc(len);
+	(*hotel[i]).name = (char *) malloc(len); //cast to char pointer
 	cp=(*hotel[i]).name;
 	cpbuffer = namebuffer;
 
-	while( (*(cp++) = *(cpbuffer++)) );
+	while( (*(cp++) = *(cpbuffer++)) ); // fill name with values of namebuffer
 
 	(*hotel[i]).age = agebuffer;
   }
